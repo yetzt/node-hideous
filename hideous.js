@@ -81,14 +81,16 @@ hideous.prototype.attach = function(d, fn){
 	try {
 
 		self.attach[d.path] = new hid.HID(d.path);
-		self.emit("attach", self.attach[d.path], d);
-		if (fn) fn(null, self.attach[d.path]);
 
 	} catch (err) {
+
 		debug("<attach-err> [%s] %s", self.format(d), err);
 		if (fn) fn(err);
 		return this;
 	}
+
+	self.emit("attach", self.attach[d.path], d);
+	if (fn) fn(null, self.attach[d.path]);
 	
 	return this;
 };
