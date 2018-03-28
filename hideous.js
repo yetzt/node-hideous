@@ -53,7 +53,7 @@ hideous.prototype.start = function(config){
 	
 	if (self.config.scan) {
 		setImmediate(function(){ self.scan(); });
-		self.scanner = setInterval(function(){ self.scan(); }, self.interval);
+		self.scanner = setInterval(function(){ self.scan(); }, self.config.interval);
 	}
 	
 	return this;
