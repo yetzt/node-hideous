@@ -81,6 +81,13 @@ hideous.prototype.attach = function(d, fn){
 	try {
 
 		self.attach[d.path] = new hid.HID(d.path);
+		
+		self.attach[d.path].on("error", function(err){
+			debug("<device-err> dropping %s due to err %s", self.format(d), err);
+			self.emit("detach", self.attach[d.path], d);
+			delete self.attach[d.path];
+			delete self.devices[d.path];
+		});
 
 	} catch (err) {
 
