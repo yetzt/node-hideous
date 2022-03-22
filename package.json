@@ -1,6 +1,6 @@
 {
   "name": "hideous",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "hotplugging for node-hid",
   "main": "hideous.js",
   "repository": {
@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/yetzt/node-hideous#readme",
   "dependencies": {
-    "debug": "^4.3.3",
+    "debug": "^4.3.4",
     "dur": "^0.0.3",
     "node-hid": "^2.1.1"
   }
